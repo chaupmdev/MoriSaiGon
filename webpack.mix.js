@@ -6,6 +6,6 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.js([
     'resources/js/modules/vocabulary-vl.js'
-], 'public/js/modules/user.js');
+], 'public/js/modules/vocabulary.js');
 
 

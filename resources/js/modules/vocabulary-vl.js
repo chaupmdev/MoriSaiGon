@@ -5,11 +5,22 @@ import serviceHTTP from "../service/serviceHTTP.js";
 Vue.createApp({
     data(){
         return {
-            author: 'Phạm Minh Châu'
+            author: 'Phạm Minh Châu',
+            formData: {
+                unit: '1',
+                vietnamese: '',
+                japanese: '',
+                wrongAnswer1: '',
+                wrongAnswer2: '',
+                wrongAnswer3: '',
+                image: ''
+            }
         }
     },
     methods: {
-
+        storeVocabulary(){
+            console.log(this.formData)
+        }
     },
     mounted(){
     },

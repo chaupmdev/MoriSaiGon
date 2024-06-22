@@ -216,6 +216,8 @@
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    @yield('script')
 </body>
 
 </html>

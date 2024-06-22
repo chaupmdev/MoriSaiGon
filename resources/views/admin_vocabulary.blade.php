@@ -67,9 +67,9 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Bài <span class="text-danger">*</span></label>
-                                <select name="" id="" class="form-control">
+                                <select name="" id="" class="form-control" v-model="formData.unit">
                                     @for ($i = 1; $i <= 29; $i++)
-                                        <option>{{$i}}</option>
+                                        <option value="{{$i}}">{{$i}}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -79,12 +79,12 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Từ vựng <span class="text-danger">*</span></label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Japanese...">
+                                <input type="text" name="" id="" class="form-control" placeholder="Japanese..." v-model="formData.japanese">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Vietnamese...">
+                                <input type="text" name="" id="" class="form-control" placeholder="Vietnamese..." v-model="formData.vietnamese">
                             </div>
                         </div>
                     </div>
@@ -92,22 +92,22 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Đáp án nhiễu <span class="text-danger">*</span></label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 1...">
+                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 1..." v-model="formData.wrongAnswer1">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 2...">
+                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 2..." v-model="formData.wrongAnswer2">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 3...">
+                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 3..." v-model="formData.wrongAnswer3">
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 text-left">
+                        {{-- <div class="col-md-12 text-left">
                             <div class="d-flex justify-content-center mb-4">
                                 <img id="selectedAvatar"
                                     :src="formData.image"
@@ -124,16 +124,19 @@
                                         ref="inputFile" />
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary">Thêm mới</button>
+                <button type="button" class="btn btn-primary" @click="storeVocabulary">Thêm mới</button>
                 </div>
             </div>
         </div>
     </div>
     {{-- Modal form --}}
 </div>
+@endsection
+@section('script')
+    <script type="text/javascript" src="{{ mix('/js/modules/vocabulary.js') }}"  charset="utf-8"></script>
 @endsection

@@ -2107,10 +2107,23 @@ __webpack_require__.r(__webpack_exports__);
 Vue.createApp({
   data: function data() {
     return {
-      author: 'Phạm Minh Châu'
+      author: 'Phạm Minh Châu',
+      formData: {
+        unit: '1',
+        vietnamese: '',
+        japanese: '',
+        wrongAnswer1: '',
+        wrongAnswer2: '',
+        wrongAnswer3: '',
+        image: ''
+      }
     };
   },
-  methods: {},
+  methods: {
+    storeVocabulary: function storeVocabulary() {
+      console.log(this.formData);
+    }
+  },
   mounted: function mounted() {},
   components: {}
 }).mount('#ctlVocabulary');
