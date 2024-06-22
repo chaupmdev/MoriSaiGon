@@ -1,0 +1,79 @@
+body, html{
+    margin: 0;
+    background-color: #f0f2f5 !important;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+a{
+    color: inherit !important;
+}
+
+a:hover{
+    text-decoration: unset;
+}
+
+p{
+    margin: 0;
+}
+
+.header-custom{
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.text-primary-custom{
+    color: #373f50 !important;
+}
+
+.item-course{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 4px;
+}
+
+.item-course:hover{
+    cursor: pointer;
+    background-color: #f0f0f0 !important;
+}
+
+.icon-custom{
+    color: #373f508f !important;
+}
+
+.footer-custom{
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+}
+
+.group-item-practive{
+    width: 100%;
+    overflow: hidden;
+}
+
+.list-item{
+    display: -webkit-box;
+    transition: transform 0.4s ease-in-out;
+
+}
+
+.item-practive{
+    width: 100%;
+}
+
+.nav-group-login{
+    background-color: #e5e6e7;
+    cursor: pointer;
+}
+
+.nav-group-login:hover{
+    background-color: #d8d9da;
+}
+
+@media only screen and (max-width: 450px) {
+    .navbar-brand img{
+        height: 30px;
+    }
+    .nav-group-login{
+        font-size: 10px;
+    }
+}
