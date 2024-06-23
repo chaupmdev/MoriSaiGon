@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VocabularyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,5 +31,13 @@ Route::group([
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin.index');
     Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
     Route::get('/vocabulary', [AuthController::class, 'vocabulary'])->name('admin.vocabulary.index');
+
+    //API
+    Route::group(['prefix' => 'api'], function(){
+        Route::group(['prefix' => 'vocabulary'], function(){
+            Route::get('/get-all-items/{course}', [VocabularyController::class, 'getAllItems'])->name('api.vocabulary.get');
+            Route::post('/store', [VocabularyController::class, 'store'])->name('api.vocabulary.store');
+        });
+    });
 });
 
