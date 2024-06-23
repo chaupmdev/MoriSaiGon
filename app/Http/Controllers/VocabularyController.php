@@ -20,7 +20,7 @@ class VocabularyController extends Controller
 
     public function store(Request $request){
         $vocabulary = new MVocabulary();
-        $validator = Validator::make($request->all(), $vocabulary->rules);
+        $validator = Validator::make($request->all(), $vocabulary->rules, $vocabulary->messages);
         if($validator->fails()){
             return response()->json([
                 'status' => 401,
@@ -38,13 +38,13 @@ class VocabularyController extends Controller
         //Handle upload fileimageUpload
         if($request->imageUpload != '')
             $vocabulary->image = CommonFunction::uploadImageBase64($request->imageUpload, '/image/vocabulary/');
-        else{
-            return response()->json([
-                "status"=> 401,
-                "message"=> 'Incorrect data',
-                "detail"=> $validator->getMessageBag()->add('image', 'Hình ảnh chưa được tải lên.')
-            ]);
-        }
+        // else{
+            // return response()->json([
+            //     "status"=> 401,
+            //     "message"=> 'Incorrect data',
+            //     "detail"=> $validator->getMessageBag()->add('image', 'Hình ảnh chưa được tải lên.')
+            // ]);
+        // }
 
         $vocabulary->save();
 
