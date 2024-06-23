@@ -24,4 +24,14 @@ class MVocabulary extends Model
         'wr_answer2' => 'required',
         'wr_answer3' => 'required'
     ];
+
+    public $messages = [
+        'course.integer' => 'Bài không hợp lệ',
+        'course.required' => 'Ê! Còn thiếu trường này nè',
+        'japanese.required' => 'Ê! Còn thiếu trường này nè',
+        'vietnamese.required' => 'Ê! Còn thiếu trường này nè',
+        'wr_answer1.required' => 'Ê! Còn thiếu trường này nè',
+        'wr_answer2.required' => 'Ê! Còn thiếu trường này nè',
+        'wr_answer3.required' => 'Ê! Còn thiếu trường này nè'
+    ];
 }

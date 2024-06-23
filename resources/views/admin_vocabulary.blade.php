@@ -67,7 +67,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Bài <span class="text-danger">*</span></label>
-                                <select name="" id="" class="form-control" v-model="formData.unit">
+                                <select name="" id="" class="form-control" v-model="formData.course">
                                     @for ($i = 1; $i <= 29; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
                                     @endfor
@@ -77,37 +77,42 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div :class="formError['japanese'] != undefined ? 'form-group error-form' : 'form-group'">
                                 <label for="">Từ vựng <span class="text-danger">*</span></label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Japanese..." v-model="formData.japanese">
+                                <input type="text" name="" id="" :class="formError['japanese'] != undefined ? 'form-control is-invalid' : 'form-control'" placeholder="Japanese..." v-model="formData.japanese">
+                                <p v-if="formError['japanese'] != undefined" class="pl-1 pt-1 text-danger small" v-html="formError['japanese'].join('<br />')"></p>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Vietnamese..." v-model="formData.vietnamese">
+                            <div :class="formError['vietnamese'] != undefined ? 'form-group error-form' : 'form-group'">
+                                <input type="text" name="" id="" :class="formError['vietnamese'] != undefined ? 'form-control is-invalid' : 'form-control'" placeholder="Vietnamese..." v-model="formData.vietnamese">
+                                <p v-if="formError['vietnamese'] != undefined" class="pl-1 pt-1 text-danger small" v-html="formError['vietnamese'].join('<br />')"></p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div :class="formError['wr_answer1'] != undefined ? 'form-group error-form' : 'form-group'">
                                 <label for="">Đáp án nhiễu <span class="text-danger">*</span></label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 1..." v-model="formData.wrongAnswer1">
+                                <input type="text" name="" id="" :class="formError['wr_answer1'] != undefined ? 'form-control is-invalid' : 'form-control'" placeholder="Đáp án nhiễu 1..." v-model="formData.wr_answer1">
+                                <p v-if="formError['wr_answer1'] != undefined" class="pl-1 pt-1 text-danger small" v-html="formError['wr_answer1'].join('<br />')"></p>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 2..." v-model="formData.wrongAnswer2">
+                            <div :class="formError['wr_answer2'] != undefined ? 'form-group error-form' : 'form-group'">
+                                <input type="text" name="" id="" :class="formError['wr_answer2'] != undefined ? 'form-control is-invalid' : 'form-control'" placeholder="Đáp án nhiễu 2..." v-model="formData.wr_answer2">
+                                <p v-if="formError['wr_answer2'] != undefined" class="pl-1 pt-1 text-danger small" v-html="formError['wr_answer2'].join('<br />')"></p>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" name="" id="" class="form-control" placeholder="Đáp án nhiễu 3..." v-model="formData.wrongAnswer3">
+                            <div :class="formError['wr_answer3'] != undefined ? 'form-group error-form' : 'form-group'">
+                                <input type="text" name="" id="" :class="formError['wr_answer3'] != undefined ? 'form-control is-invalid' : 'form-control'" placeholder="Đáp án nhiễu 3..." v-model="formData.wr_answer3">
+                                <p v-if="formError['wr_answer3'] != undefined" class="pl-1 pt-1 text-danger small" v-html="formError['wr_answer3'].join('<br />')"></p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        {{-- <div class="col-md-12 text-left">
+                        <div class="col-md-12 text-left">
                             <div class="d-flex justify-content-center mb-4">
                                 <img id="selectedAvatar"
                                     :src="formData.image"
@@ -124,7 +129,7 @@
                                         ref="inputFile" />
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
